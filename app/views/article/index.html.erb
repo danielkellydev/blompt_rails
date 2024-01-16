@@ -22,19 +22,18 @@
     data: { controller: 'autogrow', action: "input->autogrow#grow" },
     placeholder: "What is your blog post about? And what are the points you want to cover? Be as descriptive as you can." %>
 
-    <%= form.button "Help me get started", name: "help_me_get_started", class: "mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+    <%= form.submit "Help me get started", name: "help_me_get_started", class: "mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
 
     <%= form.label :writing_area %>
     <%= form.text_area :query, size: "60x10", class: "block w-full rounded-lg", placeholder: "Here is where the magic happens. The world needs to hear what you have to say." %>
 
-    <%= form.submit 'Analyse', class: "mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" %>
+    <%= form.submit 'Analyse', name: "analyse", class: "mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" %>
   <% end %>
 </div>
 
 <%= turbo_frame_tag 'response' do %>
     <div class="row mt-10">
         <h3>Response:
-          Certainly! Here's a large paragraph on the importance of biodiversity: Biodiversity, the rich tapestry of life on Earth comprising countless species of flora and fauna, underpins the health and stability of the ecosystems on which human life depends. It provides us with a wealth of resources, from the food we eat to the materials we use for shelter and medicine. Beyond tangible benefits, biodiversity contributes to cultural identity and wellbeing, as human societies draw inspiration and solace from the natural world. Each organism, no matter how small or seemingly insignificant, plays a crucial role in its ecosystem, contributing to processes such as pollination, nutrient cycling, and water purification. Additionally, diverse ecosystems are more resilient to disturbances such as climate change and habitat loss, as the variety of species and genetic diversity within populations enhance adaptability. However, the current rate of species extinction, driven by habitat destruction, pollution, overexploitation, and climate change, is alarming and poses a grave threat to global biodiversity. The loss of even a single species can have a cascade of negative effects on its ecosystem and the services it provides to humanity. Therefore, it is imperative that we take urgent and comprehensive measures to conserve biodiversity, not only for its intrinsic value but also for the continued survival and wellbeing of future generations. By fostering sustainable development, protecting natural habitats, reducing pollution, and restoring degraded ecosystems, we can work towards a future where humans live in harmony with the natural world, preserving its incredible diversity for the enduring health of our planet.
         </h3>
         <p><%= @response %></p>
       <% end %>
